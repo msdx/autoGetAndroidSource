@@ -16,6 +16,7 @@ if [[ ! -d $1 ]] ; then
 fi
 cd $1;
 echo "current dir : `pwd`";
+PATH=~/bin:$PATH
 if [[ ! -d .repo ]]; then
     echo "repo init -u https://android.googlesource.com/platform/manifest -b $1";
     repo init -u https://android.googlesource.com/platform/manifest -b $1;
