@@ -19,7 +19,7 @@ if [[ ! -d .repo ]]; then
     echo "repo init -u https://android.googlesource.com/platform/manifest -b $1";
     repo init -u https://android.googlesource.com/platform/manifest -b $1;
 fi
-export http_proxy=192.168.137.1:8087
-export https_proxy=192.168.137.1:8087
+export http_proxy=$proxy_host:$proxy_port
+export https_proxy=$proxy_host:$proxy_port
 export GIT_SSL_NO_VERIFY=1
 repo sync
