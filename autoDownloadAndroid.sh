@@ -3,13 +3,14 @@ if [[ ! -n $1 ]] ; then
     echo "Useage : ./autoGetAndroidSource <branch>"
     exit -1 ;
 fi
-./checkConfig.sh
+basepath=`dirname $0`
+$basepath/checkConfig.sh
 if [[ $? -ne 0 ]] ; then
     exit -1;
 fi
 
 set -v on
-source proxy.config
+source $basepath/proxy.config
 if [[ ! -d $1 ]] ; then
     echo "mkdir $1";
     mkdir $1;

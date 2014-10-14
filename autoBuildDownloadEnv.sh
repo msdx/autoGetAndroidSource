@@ -1,10 +1,11 @@
 #!/bin/bash
-./checkConfig.sh
+basepath=`dirname $0`
+$basepath/checkConfig.sh
 if [[ $? -ne 0 ]] ; then
     exit -1;
 fi
 set -v on
-source proxy.config
+source $basepath/proxy.config
 sudo apt-get install curl git
 if [[ ! -d ~/bin ]] ; then
     mkdir ~/bin
